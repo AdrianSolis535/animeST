@@ -1,0 +1,14 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "scss.lint.unknownAtRules": "ignore",
+  "less.lint.unknownAtRules": "ignore",
+
+  // Opcional: hace que VSCode trate tus CSS como Tailwind para mejor IntelliSense
+  "files.associations": {
+    "**/src/**/*.css": "tailwindcss"
+  },
+
+  // Recomendado para autocompletado de clases
+  "editor.quickSuggestions": { "strings": true },
+  "tailwindCSS.emmetCompletions": true
+}
