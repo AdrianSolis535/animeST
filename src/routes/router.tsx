@@ -1,13 +1,13 @@
-import { createBrowserRouter, Navigate } from "react-router-dom"
-import AuthLayout from "../layouts/AuthLayout"
-import Home from "../pages/Home"
-import GeneroDetalle from "../pages/GeneroDetalle"
-import EstadoDetalle from "../pages/EstadoDetalle"
-import CategoriaDetalle from "../pages/CategoriaDetalle"
-import LoginPage from "../Auth/LoginPage"
+import { createBrowserRouter, Navigate } from "react-router-dom";
+import AuthLayout from "../layouts/AuthLayout";
+import Home from "../pages/Home";
+import GeneroDetalle from "../pages/GeneroDetalle";
+import EstadoDetalle from "../pages/EstadoDetalle";
+import CategoriaDetalle from "../pages/CategoriaDetalle";
+import LoginPage from "../Auth/LoginPage";
+import PerfilPage from "../pages/PerfilPage";
 
 export const router = createBrowserRouter([
-
   { path: "/", element: <Navigate to="/auth/login" replace /> },
 
   {
@@ -22,5 +22,7 @@ export const router = createBrowserRouter([
   { path: "/estado/:slug", element: <EstadoDetalle /> },
   { path: "/categorias/:slug", element: <CategoriaDetalle /> },
 
+  { path: "/perfil", element: <PerfilPage /> },
+
   { path: "*", element: <div className="p-6">404 - No encontrado</div> },
-])
+]);
