@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Outlet } from "react-router-dom"
-import Navbar from "../components/Navbar"
 import Sidebar from "../components/Sidebar"
+import Navbar from "../components/Navbar"
 
 const DRAWER_ID = "app-drawer"
 
@@ -31,7 +31,7 @@ export default function MainLayout() {
                   className="h-16 w-auto block"
                   loading="lazy"
                   decoding="async"
-                  draggable={false}
+                  draggable={true}
                 />
               </a>
             }

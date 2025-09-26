@@ -1,7 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom"
-import MainLayout from "../layouts/MainLayout"
 import AuthLayout from "../layouts/AuthLayout"
 import Home from "../pages/Home"
+import GeneroDetalle from "../pages/GeneroDetalle"
+import EstadoDetalle from "../pages/EstadoDetalle"
+import CategoriaDetalle from "../pages/CategoriaDetalle"
 import LoginPage from "../Auth/LoginPage"
 
 export const router = createBrowserRouter([
@@ -11,18 +13,14 @@ export const router = createBrowserRouter([
   {
     path: "/auth",
     element: <AuthLayout />,
-    children: [
-      { path: "login", element: <LoginPage /> },
-    ],
+    children: [{ path: "login", element: <LoginPage /> }],
   },
 
-  {
-    path: "/app",
-    element: <MainLayout />,
-    children: [
-      { index: true, element: <Home /> },
-    ],
-  },
+  { path: "/app", element: <Home /> },
+
+  { path: "/generos/:slug", element: <GeneroDetalle /> },
+  { path: "/estado/:slug", element: <EstadoDetalle /> },
+  { path: "/categorias/:slug", element: <CategoriaDetalle /> },
 
   { path: "*", element: <div className="p-6">404 - No encontrado</div> },
 ])
