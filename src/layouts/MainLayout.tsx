@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
-import Navbar from "./components/Navbar"
-import Sidebar from "./components/Sidebar"
-import Login from "./components/Login"
+import { Outlet } from "react-router-dom"
+import Navbar from "../components/Navbar"
+import Sidebar from "../components/Sidebar"
 
 const DRAWER_ID = "app-drawer"
 
-export default function App() {
+export default function MainLayout() {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light")
 
   useEffect(() => {
@@ -19,11 +19,10 @@ export default function App() {
         <input id={DRAWER_ID} type="checkbox" className="drawer-toggle" />
 
         <div className="drawer-content">
-
           <Navbar
             drawerId={DRAWER_ID}
             className="h-16 px-0 overflow-hidden"
-            showBurger={false}
+            showBurger={true}
             logo={
               <a href="/" aria-label="Inicio — Mi App">
                 <img
@@ -39,11 +38,7 @@ export default function App() {
           />
 
           <main className="container mx-auto p-6">
-            <Login
-              className="max-w-2xl mx-auto"
-              onSubmit={(data) => console.log("Login submit:", data)}
-              onForgotPassword={() => console.log("Abrir recuperación de contraseña")}
-            />
+            <Outlet />
           </main>
         </div>
 
